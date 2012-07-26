@@ -15,7 +15,7 @@ class someActions extends sfActions
 {
   public function executeIndex()
   {
-    $this->month = $this->getContext()->getMonth();
+    $this->month = $this->getContext()->getCalendR()->getMonth();
   }
 }
 
@@ -52,7 +52,7 @@ To manage your events, you have to create a provider and an event class. See [Ca
 
 ### Declare your provider
 
-On Calendar construction, a `fw_calendr.construct` event is thrown. You juste hav to listen it, and to add your
+On Calendar construction, a `fw_calendr.construct` event is thrown. You just have to listen it, and to add your
 providers to the event manager, for example in your ProjectConfiguration class.
 
 Note that CalendR isn't constructed if you don't call it, so your providers won't be instantiated if not needed.
@@ -60,6 +60,8 @@ Note that CalendR isn't constructed if you don't call it, so your providers won'
 Example (for a doctrine table as provider):
 
 ```php
+<?php
+
 class ProjectConfiguration extends sfProjectConfiguration
 {
   public function setup()
