@@ -1,0 +1,3 @@
+all:
+  namespaces:
+    CalendR: '<?php echo sfConfig::get('sf_lib_dir') ?>/vendor/calendr/src'
